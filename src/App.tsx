@@ -13,7 +13,7 @@ function App() {
 
     useEffect(() => {
         setIsLoading(true)
-        axios.get('https://jsonplaceholder.typicode.com/posts?_limit=10')
+        axios.get('https://jsonplaceholder.typicode.com/posts?_limit=15')
             .then(responce => {
                 setPosts(responce.data);
                 setIsLoading(false)

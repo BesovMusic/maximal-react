@@ -9,19 +9,17 @@ type PostListProps = {
 export const PostsList: FC<PostListProps> = ({ posts }) => {
     if (!posts.length) {
         return (
-            <h1 style={{ textAlign: 'center' }}>Посты не найдены!</h1>
+            <h1>Посты не найдены!</h1>
         )
     }
     return (
         <>
-            <h1 style={{ textAlign: 'center' }}>
+            <h1>
                 Список постов
             </h1>
-
             {posts.map(post =>
                 <PostItem key={post.id} post={post} />
             )}
-
         </>
     )
 }

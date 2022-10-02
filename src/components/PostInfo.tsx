@@ -7,12 +7,17 @@ export const PostInfo: FC = () => {
     const currentPost = postList.find(post => post.id === selectedPostId) as IPost
     return (
         <>
-            <h1 style={{ textAlign: 'center' }}>
+            <h1>
                 Подробности
             </h1>
             <div className='post__info'>
                 {selectedPostId !== null
-                    ? currentPost.id
+                    ? <>
+                        <div className="postInfo__title">
+                            <span className='post__id'>{currentPost.id}.</span> {currentPost.title}
+                        </div>
+                        <div className="post__body">{currentPost.body}</div>
+                    </>
                     : <h2>Выберите пост из списка</h2>}
             </div>
         </>

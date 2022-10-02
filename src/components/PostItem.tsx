@@ -7,14 +7,14 @@ type Post = {
 
 export const PostItem: FC<Post> = ({ post }) => {
 
-    const { selectPost } = useContext(PostContext);
+    const { selectedPostId, selectPost } = useContext(PostContext);
 
     function clickHandler() {
         selectPost(post.id)
     }
 
     return (
-        <div className='post' onClick={clickHandler}>
+        <div className={selectedPostId === post.id ? 'post active' : 'post'} onClick={clickHandler}>
             <p className='post__title'>{post.id}. {post.title}</p>
         </div>
     )
